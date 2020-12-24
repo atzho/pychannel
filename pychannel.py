@@ -17,4 +17,4 @@ while keep_playing:
         if len(recent) > 3:
             recent.pop(0)
         print("Playing: " + video_name)
-        keep_playing = 0 == os.system("ffplay -autoexit " + "\"" + video_path + "\"")
+        keep_playing = 0 == os.system("ffplay -autoexit -fs " + "\"" + video_path + "\"")
