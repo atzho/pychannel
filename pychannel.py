@@ -7,7 +7,8 @@ print("Successfully retrieved videos!")
 print("Playing videos...")
 
 recent = []
-while True:
+keep_playing = True
+while keep_playing:
     video_name = random.choice(videos)
     video_path = os.path.abspath(os.path.join("Videos", video_name))
 
@@ -16,4 +17,4 @@ while True:
         if len(recent) > 3:
             recent.pop(0)
         print("Playing: " + video_name)
-        os.system("ffplay -autoexit " + "\"" + video_path + "\"")
+        keep_playing = 0 == os.system("ffplay -autoexit " + "\"" + video_path + "\"")
